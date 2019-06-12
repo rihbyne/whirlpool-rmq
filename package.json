@@ -1,0 +1,26 @@
+{
+  "name": "whirlpool-rmq",
+  "version": "1.0.0",
+  "description": "rabbitmq configuration, exchange points, routing keys for whirlpool",
+  "main": ".setup.js",
+  "engines": {
+    "node": ">=10.0.0 <11.0.0",
+    "npm": ">=6.0.0 <7.0.0 "
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rabbitmq",
+    "es6",
+    "docker",
+    "image",
+    "container"
+  ],
+  "author": "Rihan Pereira",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.3",
+    "dotenv": "^8.0.0"
+  }
+}
