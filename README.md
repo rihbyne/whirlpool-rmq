@@ -10,7 +10,7 @@ requisite exchanges, bindings, queues in appropriate vhost.
 Quickly run the image of the shelf as it is packaged
 
 `
-docker run -p 5672:5672 -p 8080:15672 -td rihbyne/whirlpool-rmq
+docker run --hostname whirlpool-rmq -p 5672:5672 -p 8080:15672 -td rihbyne/whirlpool-rmq
 `
 
 Building the image is doing using the following command
@@ -22,5 +22,5 @@ docker build --no-cache -t whirlpool-rmq .
 Once built, run the following command to start the container
 
 `
-docker run --hostname whirlpoolrmq --name whirlpool-rmq -p 5672:5672 -p 8080:15672 -td whirlpool-rmq:latest
+docker run --hostname whirlpool-rmq --name whirlpool-rmq -p 5672:5672 -p 8080:15672 -td whirlpool-rmq:latest
 `
