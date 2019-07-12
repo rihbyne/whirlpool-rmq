@@ -22,5 +22,5 @@ docker build --no-cache -t whirlpool-rmq .
 Once built, run the following command to start the container
 
 `
-docker run --hostname wh-rmq-host --name whirlpool-rmq -p 5672:5672 -p 8080:15672 -td whirlpool-rmq:latest
+docker run --hostname whirlpoolrmq --name whirlpool-rmq -p 5672:5672 -p 8080:15672 -td whirlpool-rmq:latest
 `
