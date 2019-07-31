@@ -7,3 +7,4 @@ node_modules/
 .gitignore
 .git/
 .env
+definitions.bk.json

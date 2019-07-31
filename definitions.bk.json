@@ -60,6 +60,42 @@
 	}],
 	"policies": [],
 	"queues": [{
+		"name": "frontqueue.2",
+		"vhost": "wh_urlfrontier_vhost",
+		"durable": true,
+		"auto_delete": false,
+		"arguments": {}
+	}, {
+		"name": "backqueue.3",
+		"vhost": "wh_urlfrontier_vhost",
+		"durable": true,
+		"auto_delete": false,
+		"arguments": {}
+	}, {
+		"name": "frontqueue.3",
+		"vhost": "wh_urlfrontier_vhost",
+		"durable": true,
+		"auto_delete": false,
+		"arguments": {}
+	}, {
+		"name": "backqueue.1",
+		"vhost": "wh_urlfrontier_vhost",
+		"durable": true,
+		"auto_delete": false,
+		"arguments": {}
+	}, {
+		"name": "frontqueue.1",
+		"vhost": "wh_urlfrontier_vhost",
+		"durable": true,
+		"auto_delete": false,
+		"arguments": {}
+	}, {
+		"name": "backqueue.2",
+		"vhost": "wh_urlfrontier_vhost",
+		"durable": true,
+		"auto_delete": false,
+		"arguments": {}
+	}, {
 		"name": "fetcher.q",
 		"vhost": "wh_subsystems_vhost",
 		"durable": true,
@@ -150,6 +186,48 @@
 		"arguments": {}
 	}],
 	"bindings": [{
+		"source": "bq_router.ex",
+		"vhost": "wh_urlfrontier_vhost",
+		"destination": "backqueue.1",
+		"destination_type": "queue",
+		"routing_key": "route.bqrouter.to.selector.bq1",
+		"arguments": {}
+	}, {
+		"source": "bq_router.ex",
+		"vhost": "wh_urlfrontier_vhost",
+		"destination": "backqueue.2",
+		"destination_type": "queue",
+		"routing_key": "route.bqrouter.to.selector.bq2",
+		"arguments": {}
+	}, {
+		"source": "bq_router.ex",
+		"vhost": "wh_urlfrontier_vhost",
+		"destination": "backqueue.3",
+		"destination_type": "queue",
+		"routing_key": "route.bqrouter.to.selector.bq3",
+		"arguments": {}
+	}, {
+		"source": "fq_prioritizer.ex",
+		"vhost": "wh_urlfrontier_vhost",
+		"destination": "frontqueue.1",
+		"destination_type": "queue",
+		"routing_key": "route.prioritizer.to.randomizer.fq1",
+		"arguments": {}
+	}, {
+		"source": "fq_prioritizer.ex",
+		"vhost": "wh_urlfrontier_vhost",
+		"destination": "frontqueue.2",
+		"destination_type": "queue",
+		"routing_key": "route.prioritizer.to.randomizer.fq2",
+		"arguments": {}
+	}, {
+		"source": "fq_prioritizer.ex",
+		"vhost": "wh_urlfrontier_vhost",
+		"destination": "frontqueue.3",
+		"destination_type": "queue",
+		"routing_key": "route.prioritizer.to.randomizer.fq3",
+		"arguments": {}
+	}, {
 		"source": "parser.ex.contentseen",
 		"vhost": "wh_subsystems_vhost",
 		"destination": "contentseen.q",
